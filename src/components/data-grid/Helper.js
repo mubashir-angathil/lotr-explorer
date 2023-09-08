@@ -2,7 +2,7 @@ import React from 'react'
 import services from '../../utils/services/services'
 import { Button } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
-import { setLoading, updateDataGridDetails, updateRowData } from '../../utils/helpers/contexts/redux/reducers/dataGridSlice'
+import { setLoading, updateDataGridDetails, updatePaginationParams, updateRowData } from '../../utils/helpers/contexts/redux/reducers/dataGridSlice'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
 import { setPreviewDetails } from '../../utils/helpers/contexts/redux/reducers/generalSlice'
 
@@ -64,13 +64,16 @@ const useDataGridHelper = () => {
 
   // Dispatch an action to update the page
   const handlePageChange = (newPage) => {
-    return getAllCharacters({ page: newPage, limit, offset: offset + newPage })
+    // Calculate the offset based on the newPage and limit
+    const newOffset = newPage * limit
+
+    // Dispatch the updated pagination parameters
+    dispatch(updatePaginationParams({ page: newPage, limit, offset: newOffset }))
   }
 
   // Dispatch an action to update the rows per page
   const handlePageSizeChange = (pageSize) => {
-    dispatch(setLoading(true))
-    getAllCharacters({ page, limit: pageSize })
+    dispatch(updatePaginationParams({ page: 0, limit: pageSize, offset: 0 }))
   }
 
   // Character details API handler
@@ -85,9 +88,8 @@ const useDataGridHelper = () => {
 
   // Initial data fetching API Call
   React.useEffect(() => {
-    dispatch(setLoading(true)) // Enable table loading
-    getAllCharacters({ offset }) //  Fetch initial table data
-  }, [])
+    getAllCharacters()
+  }, [page, limit, offset])
 
   return {
     handlePageChange,
@@ -98,12 +100,16 @@ const useDataGridHelper = () => {
 
 // Custom hook to handle dataGrid APIs
 const useDataGridAPIHelper = () => {
+  const dataGridConfig = useSelector((state) => state.dataGridActionSlice)
+  const { limit, page, offset } = useSelector((state) => state.dataGridSlice.details)
   // redux dispatch
   const dispatch = useDispatch()
 
   // Fetch all character details
-  const getAllCharacters = ({ page, limit, offset }) => {
-    services.getAllCharacters({ page, limit, offset })
+  const getAllCharacters = () => {
+    dispatch(setLoading(true)) // Enable table loading
+
+    services.getAllCharacters({ limit, page, offset, dataGridConfig })
       .then((response) => {
         const { status } = response
 
@@ -153,5 +159,6 @@ const useDataGridAPIHelper = () => {
 }
 
 export const dataGridHelpers = {
-  useDataGridHelper
+  useDataGridHelper,
+  useDataGridAPIHelper
 }

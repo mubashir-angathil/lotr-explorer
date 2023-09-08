@@ -1,10 +1,11 @@
 import React from 'react'
 import { Card, CardContent, CardHeader, Container, Divider } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
-import { dataGridHelpers } from './Helper'
+import TableTopComponent from '../table-top/TableTopComponent'
 import { useSelector } from 'react-redux'
 import tableTopStyle from '../../components/table-top/Style'
 import DetailsPreviewComponent from '../character-details-preview/DetailsPreviewComponent'
+import { dataGridHelpers } from './Helper'
 
 const DataGridComponent = () => {
   const { details } = useSelector(state => state.dataGridSlice)
@@ -12,8 +13,7 @@ const DataGridComponent = () => {
   const {
     tableColumns,
     handlePageChange,
-    handlePageSizeChange,
-    handleSelectionModelChange
+    handlePageSizeChange
   } = dataGridHelpers.useDataGridHelper()
 
   return (
@@ -25,12 +25,13 @@ const DataGridComponent = () => {
           {
             !isOpen
               ? <>
+                <TableTopComponent />
                 <DataGrid
                   sx={{
                     mt: 2,
                     zIndex: 0,
                     boxShadow: 0
-                    // height: '100%'
+                    // height: '18rem'
                   }}
                   autoHeight
                   pagination
@@ -47,7 +48,6 @@ const DataGridComponent = () => {
                   pageSize={details.limit}
                   onPageChange={handlePageChange}
                   onPageSizeChange={handlePageSizeChange}
-                  onSelectionModelChange={handleSelectionModelChange}
                   keepNonExistentRowsSelected
                 />
               </>
