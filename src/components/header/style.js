@@ -8,6 +8,7 @@ const headerStyle = {
     textTransform: 'capitalize',
     lineHeight: '3rem',
     letterSpacing: '1.5px',
+    textAlign: 'center',
     color: customColors.textPrimary
   },
 

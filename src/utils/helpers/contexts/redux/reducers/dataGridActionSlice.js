@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit'
 
+// Define the initial state for the data grid
 const initialState = {
   search: undefined,
   sort: undefined,
@@ -7,10 +8,12 @@ const initialState = {
   gender: undefined
 }
 
+// Create a Redux slice called 'dataGridActionSlice' with reducers
 export const dataGridActionSlice = createSlice({
-  name: 'gridActionDetails',
-  initialState,
+  name: 'gridActionDetails', // Name of the slice
+  initialState, // Initial state of the slice
   reducers: {
+    // Reducer functions for updating state based on actions
     setSearchKey: (state, action) => {
       state.search = action.payload
     },
@@ -24,12 +27,19 @@ export const dataGridActionSlice = createSlice({
       state.gender = action.payload
     },
     resetFilterConfiguration: (state) => {
+      // Reset the state to the initial state
       state = initialState
     }
   }
 })
 
-// Action creators are generated for each case reducer function
-export const { setSearchKey, setSortKey, setFilterByRaceKeys, setFilterByGender, resetFilterConfiguration } = dataGridActionSlice.actions
+// Action creators are automatically generated for each reducer function
+export const {
+  setSearchKey,
+  setSortKey,
+  setFilterByRaceKeys,
+  setFilterByGender,
+  resetFilterConfiguration
+} = dataGridActionSlice.actions
 
 export default dataGridActionSlice.reducer

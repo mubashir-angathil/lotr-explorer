@@ -6,15 +6,21 @@ import { setFilterByRaceKeys } from '../../../utils/helpers/contexts/redux/reduc
 
 const MultiSelectBoxComponent = ({ placeholder, id, items }) => {
   const dispatch = useDispatch()
+
+  // Get the 'races' value from the Redux store using useSelector
   const { races } = useSelector(state => state.dataGridActionSlice)
 
+  // Define a function to handle changes in the multi-select box
   const handleChange = (event) => {
     const { target: { value } } = event
+
+    // Dispatch an action to update the filter by race keys in the Redux store
     dispatch(setFilterByRaceKeys(value))
   }
 
   return (
     <FormControl fullWidth>
+      {/* Create a multi-select box */}
       <Select
         id={id}
         multiple
@@ -32,11 +38,14 @@ const MultiSelectBoxComponent = ({ placeholder, id, items }) => {
           return selected.join(', ')
         }}
         inputProps={{ 'aria-label': 'Without label' }}
-        sx={{ minWidth: 300 }}
+        sx={{ minWidth: 200 }}
       >
+        {/* Add a placeholder option */}
         <MenuItem disabled value="">
-          <em>Placeholder</em>
+          <em>{placeholder}</em>
         </MenuItem>
+
+        {/* Map through 'items' and create menu options */}
         {items.map((item) => (
           <MenuItem
             key={item}

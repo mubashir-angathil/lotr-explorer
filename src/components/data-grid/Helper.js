@@ -22,6 +22,7 @@ const useDataGridHelper = () => {
       headerName: 'ID',
       headerAlign: 'center',
       align: 'center',
+      sortable: false,
       maxWidth: 90
     },
     {
@@ -30,6 +31,7 @@ const useDataGridHelper = () => {
       headerAlign: 'center',
       align: 'center',
       flex: 1,
+      sortable: false,
       minWidth: 300
     },
     {
@@ -38,6 +40,7 @@ const useDataGridHelper = () => {
       headerAlign: 'center',
       align: 'center',
       flex: 1,
+      sortable: false,
       minWidth: 280
     },
     {
@@ -45,6 +48,7 @@ const useDataGridHelper = () => {
       headerName: 'gender',
       headerAlign: 'center',
       align: 'center',
+      sortable: false,
       width: 200
     },
     // Action button config
