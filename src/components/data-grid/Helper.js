@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { setLoading, updateDataGridDetails, updatePaginationParams, updateRowData } from '../../utils/helpers/contexts/redux/reducers/dataGridSlice'
 import KeyboardDoubleArrowRightIcon from '@mui/icons-material/KeyboardDoubleArrowRight'
 import { setPreviewDetails } from '../../utils/helpers/contexts/redux/reducers/generalSlice'
+import { enqueueSnackbar } from 'notistack'
 
 const useDataGridHelper = () => {
   const dispatch = useDispatch()
@@ -86,7 +87,7 @@ const useDataGridHelper = () => {
       dispatch(setLoading(true))
       getCharacterDetailsByID(characterId)
     } else {
-      alert('Something went wrong')
+      enqueueSnackbar({ message: 'Character id is missing, try again !!', variant: 'error' })
     }
   }
 
@@ -129,11 +130,12 @@ const useDataGridAPIHelper = () => {
         }
       }).catch((err) => {
       // Handle an error response (status code outside of 200-299)
-        const { status, data: { message } } = err.response
-        console.error('Error: ', status, message)
-
+        const { data: { message } } = err.response
         dispatch(setLoading(false))
         dispatch(updateRowData([]))
+
+        // snackbar
+        enqueueSnackbar({ message: message ?? 'Something went wrong', variant: 'error' })
       })
   }
 
@@ -154,8 +156,10 @@ const useDataGridAPIHelper = () => {
         }))
       }
     }).catch((err) => {
-      const { status, data: { message } } = err.response
-      console.error('Error: ', status, message)
+      const { data: { message } } = err.response
+
+      // snackbar
+      enqueueSnackbar({ message: message ?? 'Something went wrong', variant: 'error' })
     })
   }
 
