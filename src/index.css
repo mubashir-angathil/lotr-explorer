@@ -1,0 +1,32 @@
+:root{
+--primary-color: #2962ff
+}
+body {
+  margin: 0;
+  font-family: sans-serif, 'Helvetica Neue';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  scroll-behavior: smooth;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+/* Track */
+::-webkit-scrollbar-track {
+  background: 'white'; 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  /* background: rgb(96, 162, 255) ; */
+  background: var(--primary-color);
+  border-radius: 15pt;
+
+}

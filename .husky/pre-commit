@@ -1,0 +1,8 @@
+#!/usr/bin/env sh
+# This script is executed as part of Git hooks setup using Husky.
+# It runs the 'lint:fix' NPM script, which performs linting and fixes code style issues in the project.
+# It helps maintain code quality and consistency during development.
+. "$(dirname -- "$0")/_/husky.sh" # Include Husky's functionality.
+
+# Run the 'lint:fix' NPM script to lint and fix code issues.
+npm run lint:fix
