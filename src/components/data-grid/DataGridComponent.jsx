@@ -22,7 +22,7 @@ const DataGridComponent = () => {
   return (
     <Container sx={{ mt: 3, pb: 3 }}>
       {/* Container for the DataGrid component */}
-      <Card>
+      <Card elevation={3}>
         {/* CardHeader with a title */}
         <CardHeader title={'Characters'.concat(isOpen ? ` >> ${data?.name ?? ''}` : '')} sx={tableTopStyle.title} />
         <Divider />
