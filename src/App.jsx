@@ -1,12 +1,12 @@
 import React from 'react'
-import './App.css'
+import Home from './pages/Home'
+import { Box } from '@mui/material'
+import { appStyles } from './style.js'
 
-const App = () => {
-  return (
-    <div className="App">
-      <h1>Code base setup</h1>
-    </div>
-  )
-}
+const App = () => (
+<Box sx={appStyles.container}>
+<Home/>
+</Box>
+)
 
 export default App
