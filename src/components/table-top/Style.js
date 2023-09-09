@@ -11,6 +11,7 @@ const tableTopStyle = {
   },
   formLabel: {
     mr: 1.5, // Margin right (spacing)
+    fontSize: '1rem',
     width: '4rem', // Width of the form label
     flexShrink: 0, // Prevent label from shrinking
     color: customColors.textSecondary, // Text color from customColors
