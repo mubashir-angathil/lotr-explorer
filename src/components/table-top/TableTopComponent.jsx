@@ -1,5 +1,5 @@
 import React from 'react'
-import { Box, FormLabel, Grid } from '@mui/material'
+import { Box, Grid, FormHelperText } from '@mui/material'
 import { LoadingButton } from '@mui/lab'
 import { tableTopHelpers } from './helper'
 import SearchComponent from '../text-filed/search/SearchComponent'
@@ -27,12 +27,12 @@ const TableTopComponent = () => {
           <Grid container spacing={1} display='flex' flexDirection='row' flexWrap='wrap' justifyContent='space-between'>
             {/* Search input */}
             <Grid item lg={8} md={6} xs={12} sx={tableTopStyle.formFieldWrapper}>
-              <FormLabel htmlFor='search' sx={tableTopStyle.formLabel}>Search</FormLabel>
+              <FormHelperText sx={tableTopStyle.formLabel}>Search</FormHelperText>
               <SearchComponent />
             </Grid>
             {/* Sorting dropdown */}
             <Grid item lg={4} md={6} xs={12} sx={tableTopStyle.formFieldWrapper}>
-              <FormLabel htmlFor={sortingDetails.id} sx={tableTopStyle.formLabel}>Sort By</FormLabel>
+              <FormHelperText htmlFor={sortingDetails.id} sx={tableTopStyle.formLabel}>Sort By</FormHelperText>
               <SimpleSelectBoxComponent
                 id={sortingDetails.id}
                 stateName='sort'
@@ -45,11 +45,11 @@ const TableTopComponent = () => {
           <Grid container spacing={1} mt={0} display='flex' flexDirection='row' flexWrap='wrap' justifyContent='space-between'>
             {/* Race multi-select */}
             <Grid item lg={5} md={6} xs={12} sx={tableTopStyle.formFieldWrapper}>
-              <FormLabel
+              <FormHelperText
                 htmlFor={raceFilterDetails.id}
                 sx={tableTopStyle.formLabel}>
                 Race
-              </FormLabel>
+              </FormHelperText>
               <MultiSelectBoxComponent
                 id={raceFilterDetails.id}
                 placeholder={raceFilterDetails.placeholder}
@@ -57,11 +57,11 @@ const TableTopComponent = () => {
             </Grid>
             {/* Gender dropdown */}
             <Grid item lg={5} md={6} sm={12} xs={12} sx={tableTopStyle.formFieldWrapper}>
-              <FormLabel
+              <FormHelperText
                 htmlFor={genderFilterDetails.id}
                 sx={tableTopStyle.formLabel}>
                 Gender
-              </FormLabel>
+              </FormHelperText>
               <SimpleSelectBoxComponent
                 id={genderFilterDetails.id}
                 stateName='gender'
