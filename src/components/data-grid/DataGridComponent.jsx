@@ -6,6 +6,7 @@ import { dataGridHelpers } from './helper'
 import DetailsPreviewComponent from '../character-details-preview/DetailsPreviewComponent'
 import TableTopComponent from '../table-top/TableTopComponent'
 import tableTopStyle from '../../components/table-top/style'
+import CustomPagination from './CustomPagination'
 
 const DataGridComponent = () => {
   // Access the Redux store to get the data and state you need
@@ -51,17 +52,14 @@ const DataGridComponent = () => {
                     disableSelectionOnClick
                     page={details.page}
                     rowCount={details.total}
-                    rowsPerPageOptions={[10, 20, 50]}
                     paginationMode='server'
                     pageSize={details.limit}
                     onPageChange={handlePageChange}
                     onPageSizeChange={handlePageSizeChange}
                     keepNonExistentRowsSelected
                     disableColumnMenu
-                    componentsProps={{
-                      pagination: {
-                        labelRowsPerPage: 'Limit'
-                      }
+                    components={{
+                      Pagination: CustomPagination
                     }}
                   />
                 </>
