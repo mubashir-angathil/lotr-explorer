@@ -1,6 +1,6 @@
 import React from 'react'
 import App from './App'
-import reportWebVitals from './ReportWebVitals'
+import reportWebVitals from './reportWebVitals'
 import { createRoot } from 'react-dom/client'
 import './Index.css'
 import store from './utils/helpers/contexts/redux/store'
