@@ -1,6 +1,6 @@
 import { Box, Typography } from '@mui/material'
 import React from 'react'
-import headerStyle from './style'
+import headerStyle from './Style'
 
 const HeaderComponent = () => {
   // Define the data for the title and subtitle

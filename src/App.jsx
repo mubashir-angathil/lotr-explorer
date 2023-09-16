@@ -1,7 +1,7 @@
 import React from 'react'
 import Home from './pages/Home'
 import { Box, Button } from '@mui/material'
-import { appStyles } from './style.js'
+import { appStyles } from './Style.js'
 import { SnackbarProvider, closeSnackbar } from 'notistack'
 
 // The App component serves as the root component of the application.

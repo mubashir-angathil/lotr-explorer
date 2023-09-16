@@ -1,6 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux'
 import { updatePaginationParams } from '../../utils/helpers/contexts/redux/reducers/dataGridSlice'
-import { dataGridHelpers } from '../data-grid/helper'
+import { dataGridHelpers } from '../data-grid/Helper'
 
 const useTableTopHelper = () => {
   // Access Redux store to get data and state
