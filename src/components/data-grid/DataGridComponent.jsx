@@ -2,10 +2,10 @@ import React from 'react'
 import { Card, CardContent, CardHeader, Container, Divider } from '@mui/material'
 import { DataGrid } from '@mui/x-data-grid'
 import { useSelector } from 'react-redux'
-import { dataGridHelpers } from './helper'
+import { dataGridHelpers } from './Helper'
 import DetailsPreviewComponent from '../character-details-preview/DetailsPreviewComponent'
 import TableTopComponent from '../table-top/TableTopComponent'
-import tableTopStyle from '../../components/table-top/style'
+import tableTopStyle from '../table-top/Style'
 import CustomPagination from './CustomPagination'
 
 const DataGridComponent = () => {

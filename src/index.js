@@ -1,12 +1,12 @@
 import React from 'react'
-import './index.css'
 import App from './App'
 import reportWebVitals from './reportWebVitals'
 import { createRoot } from 'react-dom/client'
+import './Index.css'
+import store from './utils/helpers/contexts/redux/store'
 
 // Redux imports
 import { Provider } from 'react-redux'
-import store from './utils/helpers/contexts/redux/store.js'
 
 // Function to render the React application
 const renderApp = () => {
