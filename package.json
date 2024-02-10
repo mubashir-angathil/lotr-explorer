@@ -54,6 +54,7 @@
     "eslint-plugin-n": "^16.0.2",
     "eslint-plugin-promise": "^6.1.1",
     "eslint-plugin-react": "^7.33.2",
-    "husky": "^8.0.3"
+    "husky": "^8.0.3",
+    "@babel/plugin-proposal-private-property-in-object": "^7.16.7"
   }
 }
