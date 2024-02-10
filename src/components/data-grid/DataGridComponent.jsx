@@ -68,6 +68,7 @@ const DataGridComponent = () => {
                     onPageSizeChange={handlePageSizeChange}
                     keepNonExistentRowsSelected
                     disableColumnMenu
+                    density='compact'
                     components={{
                       Pagination: CustomPagination
                     }}
