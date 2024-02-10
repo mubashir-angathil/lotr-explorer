@@ -1,52 +1,48 @@
-# Getting Started with Create React App
+# LOTR EXPLORER
+<img src='https://github.com/mubashir-angathil/lotr-explorer/blob/master/public/thumbnail.png' height='450' width='100%'/>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+LotR Explorer is a React-based web application that provides users with a comprehensive tool to explore the vast universe of J.R.R. Tolkien's Middle-earth. Leveraging The Lord of the Rings API, users can seamlessly search, filter, sort, and paginate through characters from the beloved fantasy series. Each character comes with detailed information, allowing fans to delve deeper into their favorite stories.
 
-## set development env '.env.development.local'
+## Features
 
- REACT_APP_ACCESS_TOKEN="Your Token"
- REACT_APP_ENDPOINT="https://the-one-api.dev/v2/"
+- Search characters by name
+- Filter characters by race (multiple races can be selected)
+- Filter characters by gender (Male/Female/Any)
+- Sort characters by name (ascending/descending)
+- Paginate through character results
+- Limit number of characters per page (5/10/20/50)
+- View detailed information about selected characters
 
-## Available Scripts
+## Getting Started
 
-In the project directory, you can run:
+To get started with LotR Explorer, follow these steps:
 
-### `npm start`
+1. Clone the repository:
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+```bash
+git clone https://github.com/mubashir-angathil/lotr-explorer.git
+```
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+2. Install dependencies:
 
-### `npm test`
+```bash
+cd lotr-explorer
+npm install
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+3. Create a `.env.development` file in the root directory of the project and add the following configuration:
 
-### `npm run build`
+```
+REACT_APP_ACCESS_TOKEN=your_access_token_here
+REACT_APP_ENDPOINT=https://the-one-api.dev/v2/
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Replace `your_access_token_here` with your actual API token obtained from The Lord of the Rings API.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+4. Start the development server:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+npm start
+```
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-### `npm run lint:fix`
-Automatically fix linting issues or coding style violations in source code files.
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+5. Open [http://localhost:3000](http://localhost:3000) in your browser to view the application.
