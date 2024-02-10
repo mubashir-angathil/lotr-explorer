@@ -1,6 +1,4 @@
-# LOTR EXPLORER
 <img src='https://github.com/mubashir-angathil/lotr-explorer/blob/master/public/thumbnail.png' height='450' width='100%'/>
-
 LotR Explorer is a React-based web application that provides users with a comprehensive tool to explore the vast universe of J.R.R. Tolkien's Middle-earth. Leveraging The Lord of the Rings API, users can seamlessly search, filter, sort, and paginate through characters from the beloved fantasy series. Each character comes with detailed information, allowing fans to delve deeper into their favorite stories.
 
 ## Features
