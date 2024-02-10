@@ -5,7 +5,7 @@ const headerStyle = {
   title: {
     fontSize: '2.2rem',
     fontWeight: '700',
-    textTransform: 'capitalize',
+    textTransform: 'uppercase',
     lineHeight: '3rem',
     letterSpacing: '1.5px',
     textAlign: 'center',

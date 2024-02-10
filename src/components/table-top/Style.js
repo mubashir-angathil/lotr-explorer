@@ -4,10 +4,10 @@ import customColors from '../../utils/helpers/constants/colors'
 const tableTopStyle = {
   title: {
     fontSize: '1.8rem', // Title font size
-    fontWeight: '700', // Title font weight (bold)
-    textAlign: 'center', // Center-align the title text,
-    background: customColors.textPrimary, // Background color primary,
-    color: 'white' // Font color white
+    fontWeight: 'bold' // Title font weight (bold)
+    // textAlign: 'center', // Center-align the title text,
+    // background: customColors.textPrimary, // Background color primary,
+    // color: 'white' // Font color white
   },
   formLabel: {
     mr: 1.5, // Margin right (spacing)

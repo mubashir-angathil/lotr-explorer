@@ -52,7 +52,7 @@ const CustomPagination = () => {
           size='small'
         >
           {/* Dropdown options */}
-          {[10, 20, 50].map((option) => (
+          {[5, 10, 20, 50].map((option) => (
             <MenuItem key={option} value={option}>
               {option}
             </MenuItem>

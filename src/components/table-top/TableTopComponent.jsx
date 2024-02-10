@@ -7,8 +7,10 @@ import tableTopStyle from './Style'
 import SimpleSelectBoxComponent from '../text-filed/select-box/SimpleSelectBoxComponent'
 import MultiSelectBoxComponent from '../text-filed/select-box/MultiSelectBoxComponent'
 import { setFilterByGender, setSortKey } from '../../utils/helpers/contexts/redux/reducers/dataGridActionSlice'
+import PropTypes from 'prop-types' // Import PropTypes from 'prop-types'
+import customColors from '../../utils/helpers/constants/colors'
 
-const TableTopComponent = () => {
+const TableTopComponent = ({ show }) => {
   // Retrieve helper functions and data from the tableTopHelpers
   const {
     handleFormSubmission,
@@ -19,7 +21,7 @@ const TableTopComponent = () => {
   } = tableTopHelpers.useTableTopHelper()
 
   return (
-    <Grid container gap={1}>
+    <Grid container gap={1} display={show ? 'block' : 'none'}>
       <Grid item xs={12}>
         {/* Form for filtering and sorting */}
         <Box component='form' onSubmit={handleFormSubmission}>
@@ -76,7 +78,7 @@ const TableTopComponent = () => {
                 loading={loading}
                 variant='contained'
                 size='medium'
-                sx={{ width: '10rem' }}>Submit</LoadingButton>
+                sx={{ width: '10rem', background: customColors.textPrimary, color: '#ffff' }}>Submit</LoadingButton>
             </Grid>
           </Grid>
         </Box>
@@ -86,3 +88,7 @@ const TableTopComponent = () => {
 }
 
 export default TableTopComponent
+
+TableTopComponent.propTypes = {
+  show: PropTypes.boolean
+}

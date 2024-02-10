@@ -6,7 +6,7 @@ export const dataGridSlice = createSlice({
   initialState: {
     details: {
       rowData: [], // An array to hold row data
-      limit: 10, // The number of rows per page
+      limit: 5, // The number of rows per page
       page: 0, // The current page
       total: 0, // The total number of data rows
       offset: 0, // An offset for pagination
